@@ -10,12 +10,12 @@ describe("Intern", () =>{
     })
 })
 
-describe("we want getRole() to return \"Intern\"", () => {
+describe('we want getRole() to return "Intern" ', () => {
     const intern = new Intern("Teangelo", 3, "yes@google.com", "School Name" );
     expect(intern.getRole()).toEqual("Intern")
 });
 
-describe("Getting Github from gitHub() user name for Intern", () => {
+describe("Getting school name from getSchool() function for Intern", () => {
     const school = "school";
     const intern = new Intern("Teangelo", 3, "yes@google.com", school);
     expect(intern.getSchool()).toEqual(school);
