@@ -15,8 +15,8 @@ describe("we want getRole() to return \"Engineer\"", () => {
     expect(engin.getRole()).toEqual("Engineer")
 });
 
-describe("Getting Github from gitHub() user name for Engineer", () => {
-    const testForGit = Engineer;
-    const engin = new Engineer("Teangelo", 3, "yes@google.com", testForGit);
-    expect(engin.getGithub()).toEqual(testForGit);
+describe("Getting Github from gitHub() function for Engineer", () => {
+    const userName = "Git username";
+    const engin = new Engineer("Teangelo", 3, "yes@google.com", userName);
+    expect(engin.getGithub()).toEqual(userName);
 })
