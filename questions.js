@@ -6,7 +6,7 @@ const engineer = require('./lib/engineer');
 const manager = require('./lib/manager');
 
 
-function inputEmployee(){
+function inputEmployee() {
 
     inquire.prompt([
         {
@@ -15,17 +15,110 @@ function inputEmployee(){
             name: "name",
             choices: ["Manager", "Engineer", "Intern"]
         },
-    
-    ]).then(val => {
-        if(val === "Manager"){
-             // function with questions for manager information will go here
-            } else if(val.name === "Engineer"){
-                //function with questions for engineer information will go here
 
-            } else if(val.name === "Intern") {
-                //function with questions for manager information will go here
-            } // Maybe use a switch case statement here instead of else if?
+    ]).then(val => {
+        if (val.name === "Manager") {
+             managerInput();
+        } else if (val.name === "Engineer") {
+            engineerInput()
+
+        } else if (val.name === "Intern") {
+            internInput();
+        } // Maybe use a switch case statement here instead of else if?
     });
+
 };
+
+function managerInput() {
+    return inquire.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your ID?'
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?'
+        },
+
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is your office number?'
+
+        }
+    ])
+};
+
+function engineerInput() {
+    return inquire.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your ID?'
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?'
+        },
+
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your github name?'
+
+        }
+    ])
+};
+
+function internInput() {
+    return inquire.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+
+        },
+
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your ID?'
+        },
+
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?'
+        },
+
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What school did you study at?'
+
+        }
+    ])
+};
+
+
 
 inputEmployee();
