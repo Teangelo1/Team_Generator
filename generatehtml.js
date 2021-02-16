@@ -51,10 +51,19 @@ let engineerCard = `
         </div>`)
        break;
 
-  
-     }
-
-
+       case "Intern":
+          blankCard = blankCard.concat(  `
+          <div class="card" style="width: 18rem;">
+          <h1>Engineer</h1>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:${webDevs[s].name}</li>
+            <li class="list-group-item">ID:${webDevs[s].id}</li>
+            <li class="list-group-item">Email:${webDevs[s].email}</li>
+            <li class="list-group-item">School:${webDevs[s].school}</li>
+          </ul>
+        </div>`)
+       break;
+}
   }
   return blankCard;
 
@@ -86,8 +95,6 @@ function generateHtml(webDevs){
 
 </html>`
 
-
-  
 }
 
 module.exports = generateHtml;
