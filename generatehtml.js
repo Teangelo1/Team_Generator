@@ -9,7 +9,7 @@ function newCards(webDevs){
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name:${webDevs[s].name}</li>
             <li class="list-group-item">ID:${webDevs[s].id}</li>
-            <li class="list-group-item">Email:${webDevs[s].email}</li>
+            <li class="list-group-item">Email:<a href="mailto:{{ email }}">${webDevs[s].email}</li>
             <li class="list-group-item">Office Number:${webDevs[s].officeNumber}</li>
           </ul>
         </div>`)
@@ -22,8 +22,8 @@ function newCards(webDevs){
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email: ${webDevs[s].email}</li>
-            <li class="list-group-item">Github: ${webDevs[s].github}</li>
+            <li class="list-group-item">Email:<a href="mailto:{{ email }}"> ${webDevs[s].email}</li>
+            <li class="list-group-item">Github:${webDevs[s].github}</li>
           </ul>
         </div>`)
        break;
@@ -35,7 +35,7 @@ function newCards(webDevs){
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email: ${webDevs[s].email}</li>
+            <li class="list-group-item">Email:<a href="mailto:{{ email }}"> ${webDevs[s].email}</li>
             <li class="list-group-item">School: ${webDevs[s].school}</li>
           </ul>
         </div>`)

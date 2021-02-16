@@ -255,18 +255,3 @@ function internInput() {
 
 }
 whichRole()
-
-// function newHtmlFile(){
-//     if(anotherEmployee === "No"){
-//        let htmlFile = generateHtml()
-//        fs.writeFile("team.html", htmlFile, (err) =>
-//        err ? console.log(err) : console.log("You're HTML file has been created") )
-
-//     }
-
-// }
-
-
-
- 
-//  newHtmlFile();
