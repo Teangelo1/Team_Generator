@@ -1,17 +1,8 @@
-let managerCard = `<div class="card" style="width: 18rem;">
-  <h1>Mangager</h1>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">ID:$</li>
-    <li class="list-group-item">Email:</li>
-    <li class="list-group-item">Office Number:</li>
-  </ul>
-</div>`;
-
-
-    let engineerCard = `
+let engineerCard = `
     <div class="card" style="width: 18rem;">
     <h1>Engineer</h1>
     <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name:$</li>
       <li class="list-group-item">ID: </li>
       <li class="list-group-item">Email: </li>
       <li class="list-group-item">Github: </li>
@@ -23,36 +14,53 @@ let managerCard = `<div class="card" style="width: 18rem;">
     let internCard = `<div class="card" style="width: 18rem;">
     <h1>Intern</h1>
     <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name:$</li>
       <li class="list-group-item">ID: </li>
       <li class="list-group-item">Email:</li>
       <li class="list-group-item">School of Studies: </li>
     </ul>
   </div>`
 
-    // let wrapper = document.getElementById("wrapper");
-    // wrapper.innerHTML(engineerCard,managerCard,internCard);
-function createCard(data){
-    let cardText = "";
+  function newCards(webDevs){
+    let blankCard = "";
+    for (let s = 0; s < webDevs.length; s++) {
+      switch(webDevs[s].getRole()){
+        case "Manager":
+          blankCard = blankCard.concat(  `
+          <div class="card" style="width: 18rem;">
+          <h1>Mangager</h1>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:${webDevs[s].name}</li>
+            <li class="list-group-item">ID:${webDevs[s].id}</li>
+            <li class="list-group-item">Email:${webDevs[s].email}</li>
+            <li class="list-group-item">Office Number:${webDevs[s].officeNumber}</li>
+          </ul>
+        </div>`)
+         break;
 
-    for (let i = 0; i  < data.length; i++) {
-    let newCard = `<div class="card" style="width: 18rem;">
-    <h1>Engineer</h1>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: </li>
-      <li class="list-group-item">Email: </li>
-      <li class="list-group-item">Github: </li>
-    </ul>
-    </div>
-  </div>`
+        case "Engineer":
+          blankCard = blankCard.concat(  `
+          <div class="card" style="width: 18rem;">
+          <h1>Engineer</h1>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:${webDevs[s].name}</li>
+            <li class="list-group-item">ID:${webDevs[s].id}</li>
+            <li class="list-group-item">Email:${webDevs[s].email}</li>
+            <li class="list-group-item">Github:${webDevs[s].github}</li>
+          </ul>
+        </div>`)
+       break;
 
-  cardText += newCard
-    }
-        return cardText;
-}
+  
+     }
 
 
+  }
+  return blankCard;
 
-function generateHtml(){
+  }
+function generateHtml(webDevs){
+  
   return `<!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +78,7 @@ function generateHtml(){
     <div id="wrapper" class="container-fluid">
         <h1>Team of Web Dev's</h1>
 
-
+        ${newCards(webDevs)}
      
 
     <script src="../generatehtml.js"></script>
@@ -81,7 +89,5 @@ function generateHtml(){
 
   
 }
-
-generateHtml();
 
 module.exports = generateHtml;

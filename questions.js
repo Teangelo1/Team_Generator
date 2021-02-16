@@ -5,6 +5,24 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const generateHtml = require('./generatehtml')
 
+let anotherEmployee = "";
+
+function lastEmployee(data) {
+if((data.anotherEmployee).includes("No")) {
+     anotherEmployee = "No"
+
+}
+
+}
+
+function newHtmlFile(webDevs){
+
+       let htmlFile = generateHtml(webDevs)
+       fs.writeFile("team.html", htmlFile, (err) =>
+       err ? console.log(err) : console.log("You're HTML file has been created") )
+
+    }
+
 const webDevs = [];
 
 
@@ -31,6 +49,8 @@ function whichRole() {
 
             case "Intern":
                 internInput();
+
+                default:
         }
     });
 
@@ -94,10 +114,16 @@ function managerInput() {
 
             case "Intern":
                 internInput();
+
+                default:
         }
         let m = new Manager(data.name, data.id, data.email, data.officeNumber)
         webDevs.push(m)
         //  console.log(webDevs)
+
+    if((data.anotherEmployee).includes("No")) {
+        newHtmlFile(webDevs);
+    }
     })
 }
 
@@ -150,10 +176,18 @@ function engineerInput() {
 
             case "Intern":
                 internInput();
+
+                default:
+
+                    
         }
         let e = new Engineer(data.name, data.id, data.email, data.github)
         webDevs.push(e);
         // console.log(webDevs)
+
+        if((data.anotherEmployee).includes("No")) {
+            newHtmlFile(webDevs);
+        }
     });
 }
 
@@ -206,21 +240,33 @@ function internInput() {
 
             case "Intern":
                 internInput();
+
+                default:
         }
 
         let i = new Intern(data.name, data.id, data.email, data.school)
         webDevs.push(i);
-        // console.log(webDevs)
+    //   console.log(i)
+      if((data.anotherEmployee).includes("No")) {
+        newHtmlFile(webDevs);
+    }
     });
+    
 
 }
 whichRole()
 
- function newHtmlFile(){
+// function newHtmlFile(){
+//     if(anotherEmployee === "No"){
+//        let htmlFile = generateHtml()
+//        fs.writeFile("team.html", htmlFile, (err) =>
+//        err ? console.log(err) : console.log("You're HTML file has been created") )
 
-        let htmlFile = generateHtml()
-        fs.writeFile("index.html", htmlFile, (err) =>
-        err ? console.log(err) : console.log("You're HTML file has been created") )
+//     }
 
- }
- newHtmlFile();
+// }
+
+
+
+ 
+//  newHtmlFile();
