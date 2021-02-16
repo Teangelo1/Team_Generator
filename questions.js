@@ -19,19 +19,19 @@ function whichRole() {
         },
 
     ]).then(val => {
+
         switch (val.name) {
-           case "Manager": 
-           managerInput()
-           break;
-           
+            case "Manager":
+                managerInput()
+                break;
 
-          case "Engineer":
-            engineerInput()
-            break;
+            case "Engineer":
+                engineerInput()
+                break;
 
-         case "Intern":
-            internInput();
-     } 
+            case "Intern":
+                internInput();
+        }
     });
 
 };
@@ -80,28 +80,25 @@ function managerInput() {
 
         }
 
-     ]).then(function(data) {
-        //  console.log(data)
-        switch (data.anotherEmployee) {
-            case "Manager": 
-            // console.log("if fired")
-            managerInput()
-            break;
-            
- 
-           case "Engineer":
-             engineerInput()
-             break;
- 
-          case "Intern":
-             internInput();
+    ]).then(function (data) {
 
-             default:
-      } 
-         let m = new Manager(data.name, data.id, data.email, data.officeNumber)
+        switch (data.anotherEmployee) {
+            case "Manager":
+                managerInput()
+                break;
+
+
+            case "Engineer":
+                engineerInput()
+                break;
+
+            case "Intern":
+                internInput();
+        }
+        let m = new Manager(data.name, data.id, data.email, data.officeNumber)
         webDevs.push(m)
-         console.log(webDevs)
-     })
+        //  console.log(webDevs)
+    })
 }
 
 
@@ -140,10 +137,23 @@ function engineerInput() {
             choices: ["Manager", "Engineer", "Intern", "No"]
 
         }
-     ]).then(function(data){
+    ]).then(function (data) {
+        switch (data.anotherEmployee) {
+            case "Manager":
+                managerInput()
+                break;
+
+
+            case "Engineer":
+                engineerInput()
+                break;
+
+            case "Intern":
+                internInput();
+        }
         let e = new Engineer(data.name, data.id, data.email, data.github)
-    webDevs.push(e);
-    console.log(webDevs)
+        webDevs.push(e);
+        // console.log(webDevs)
     });
 }
 
@@ -173,23 +183,44 @@ function internInput() {
             name: 'school',
             message: 'What is school of studies?'
 
+        },
+
+        {
+            type: "list",
+            message: "Would you like to add another employee?",
+            name: "anotherEmployee",
+            choices: ["Manager", "Engineer", "Intern", "No"]
+
         }
 
-    ]).then(function(data){
+    ]).then(function (data) {
+        switch (data.anotherEmployee) {
+            case "Manager":
+                managerInput()
+                break;
 
-        let i = new Intern (data.name, data.id, data.email, data.school)
-    webDevs.push(i);
-    console.log(webDevs)
+
+            case "Engineer":
+                engineerInput()
+                break;
+
+            case "Intern":
+                internInput();
+        }
+
+        let i = new Intern(data.name, data.id, data.email, data.school)
+        webDevs.push(i);
+        // console.log(webDevs)
     });
 
-  }
+}
 whichRole()
 
 // function newHtmlFile(){
-  
+
 //         let htmlFile = generateHtml()
 //         fs.writeFile("index.html", htmlFile, (err) =>
 //         err ? console.log(err) : console.log("You're HTML file has been created") )
-    
+
 // }
 // newHtmlFile();
