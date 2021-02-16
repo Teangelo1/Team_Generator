@@ -216,11 +216,11 @@ function internInput() {
 }
 whichRole()
 
-// function newHtmlFile(){
+ function newHtmlFile(){
 
-//         let htmlFile = generateHtml()
-//         fs.writeFile("index.html", htmlFile, (err) =>
-//         err ? console.log(err) : console.log("You're HTML file has been created") )
+        let htmlFile = generateHtml()
+        fs.writeFile("index.html", htmlFile, (err) =>
+        err ? console.log(err) : console.log("You're HTML file has been created") )
 
-// }
-// newHtmlFile();
+ }
+ newHtmlFile();
