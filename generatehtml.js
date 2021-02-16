@@ -1,27 +1,4 @@
-let engineerCard = `
-    <div class="card" style="width: 18rem;">
-    <h1>Engineer</h1>
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">Name:$</li>
-      <li class="list-group-item">ID: </li>
-      <li class="list-group-item">Email: </li>
-      <li class="list-group-item">Github: </li>
-    </ul>
-    </div>
-  </div>
-    `;
-
-    let internCard = `<div class="card" style="width: 18rem;">
-    <h1>Intern</h1>
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">Name:$</li>
-      <li class="list-group-item">ID: </li>
-      <li class="list-group-item">Email:</li>
-      <li class="list-group-item">School of Studies: </li>
-    </ul>
-  </div>`
-
-  function newCards(webDevs){
+function newCards(webDevs){
     let blankCard = "";
     for (let s = 0; s < webDevs.length; s++) {
       switch(webDevs[s].getRole()){
