@@ -13,7 +13,7 @@ function whichRole() {
     inquire.prompt([
         {
             type: "list",
-            message: "What is your role?",
+            message: "What is your role with the company?",
             name: "name",
             choices: ["Manager", "Engineer", "Intern"]
         },
@@ -48,7 +48,7 @@ function managerInput() {
         {
             type: 'input',
             name: 'name',
-            message: 'What is your role?'
+            message: 'What is your role with the company?'
 
 
         },
@@ -74,7 +74,7 @@ function managerInput() {
 
         {
             type: "list",
-            message: "Would you like to add another employee?",
+            message: "Would you like to add another employee to the development team?",
             name: "anotherEmployee",
             choices: ["Manager", "Engineer", "Intern", "No"]
 
@@ -132,7 +132,7 @@ function engineerInput() {
         },
         {
             type: "list",
-            message: "Would you like to add another employee?",
+            message: "Would you like to add another employee to the development team",
             name: "anotherEmployee",
             choices: ["Manager", "Engineer", "Intern", "No"]
 
@@ -187,7 +187,7 @@ function internInput() {
 
         {
             type: "list",
-            message: "Would you like to add another employee?",
+            message: "Would you like to add another employee to the development team?",
             name: "anotherEmployee",
             choices: ["Manager", "Engineer", "Intern", "No"]
 
