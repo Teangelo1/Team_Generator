@@ -1,3 +1,36 @@
+let managerCard = `<div class="card" style="width: 18rem;">
+  <h1>Mangager</h1>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">ID:$</li>
+    <li class="list-group-item">Email:</li>
+    <li class="list-group-item">Office Number:</li>
+  </ul>
+</div>`;
+
+
+    let engineerCard = `
+    <div class="card" style="width: 18rem;">
+    <h1>Engineer</h1>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: </li>
+      <li class="list-group-item">Email: </li>
+      <li class="list-group-item">Github: </li>
+    </ul>
+    </div>
+  </div>
+    `;
+
+    let internCard = `<div class="card" style="width: 18rem;">
+    <h1>Intern</h1>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: </li>
+      <li class="list-group-item">Email:</li>
+      <li class="list-group-item">School of Studies: </li>
+    </ul>
+  </div>`
+
+    // let wrapper = document.getElementById("wrapper");
+    // wrapper.innerHTML(engineerCard,managerCard,internCard);
 function createCard(data){
     let cardText = "";
 
@@ -20,8 +53,7 @@ function createCard(data){
 
 
 function generateHtml(){
-    return `
-    <!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,14 +67,21 @@ function generateHtml(){
 
 <body>
 
-    <div class="container-fluid">
+    <div id="wrapper" class="container-fluid">
         <h1>Team of Web Dev's</h1>
 
-    </div>
-    // call card text here ( function )
 
+     
+
+    <script src="../generatehtml.js"></script>
 </body>
 
-</html>
-    `
+</html>`
+
+
+  
 }
+
+generateHtml();
+
+module.exports = generateHtml;

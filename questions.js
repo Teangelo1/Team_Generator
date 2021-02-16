@@ -1,30 +1,37 @@
 const inquire = require('inquirer');
 const fs = require('fs');
-const path = require('path');
-const intern = require('./lib/intern')
-const engineer = require('./lib/engineer');
-const manager = require('./lib/manager');
+const Intern = require('./lib/intern')
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const generateHtml = require('./generatehtml')
+
+const webDevs = [];
 
 
-function inputEmployee() {
+function whichRole() {
 
     inquire.prompt([
         {
             type: "list",
-            message: "Choose the type of employee you would like to input.",
+            message: "What is your role?",
             name: "name",
             choices: ["Manager", "Engineer", "Intern"]
         },
 
     ]).then(val => {
-        if (val.name === "Manager") {
-             managerInput();
-        } else if (val.name === "Engineer") {
-            engineerInput()
+        switch (val.name) {
+           case "Manager": 
+           managerInput()
+           break;
+           
 
-        } else if (val.name === "Intern") {
+          case "Engineer":
+            engineerInput()
+            break;
+
+         case "Intern":
             internInput();
-        } // Maybe use a switch case statement here instead of else if?
+     } 
     });
 
 };
@@ -35,6 +42,14 @@ function managerInput() {
             type: 'input',
             name: 'name',
             message: 'What is your name?'
+
+        },
+
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your role?'
+
 
         },
 
@@ -55,9 +70,41 @@ function managerInput() {
             name: 'officeNumber',
             message: 'What is your office number?'
 
+        },
+
+        {
+            type: "list",
+            message: "Would you like to add another employee?",
+            name: "anotherEmployee",
+            choices: ["Manager", "Engineer", "Intern", "No"]
+
         }
-    ])
-};
+
+     ]).then(function(data) {
+        //  console.log(data)
+        switch (data.anotherEmployee) {
+            case "Manager": 
+            // console.log("if fired")
+            managerInput()
+            break;
+            
+ 
+           case "Engineer":
+             engineerInput()
+             break;
+ 
+          case "Intern":
+             internInput();
+
+             default:
+      } 
+         let m = new Manager(data.name, data.id, data.email, data.officeNumber)
+        webDevs.push(m)
+         console.log(webDevs)
+     })
+}
+
+
 
 function engineerInput() {
     return inquire.prompt([
@@ -85,9 +132,20 @@ function engineerInput() {
             name: 'github',
             message: 'What is your github name?'
 
+        },
+        {
+            type: "list",
+            message: "Would you like to add another employee?",
+            name: "anotherEmployee",
+            choices: ["Manager", "Engineer", "Intern", "No"]
+
         }
-    ])
-};
+     ]).then(function(data){
+        let e = new Engineer(data.name, data.id, data.email, data.github)
+    webDevs.push(e);
+    console.log(webDevs)
+    });
+}
 
 function internInput() {
     return inquire.prompt([
@@ -112,13 +170,26 @@ function internInput() {
 
         {
             type: 'input',
-            name: 'github',
-            message: 'What school did you study at?'
+            name: 'school',
+            message: 'What is school of studies?'
 
         }
-    ])
-};
 
+    ]).then(function(data){
 
+        let i = new Intern (data.name, data.id, data.email, data.school)
+    webDevs.push(i);
+    console.log(webDevs)
+    });
 
-inputEmployee();
+  }
+whichRole()
+
+// function newHtmlFile(){
+  
+//         let htmlFile = generateHtml()
+//         fs.writeFile("index.html", htmlFile, (err) =>
+//         err ? console.log(err) : console.log("You're HTML file has been created") )
+    
+// }
+// newHtmlFile();
