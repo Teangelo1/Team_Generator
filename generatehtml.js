@@ -20,10 +20,10 @@ function newCards(webDevs){
           <div class="card" style="width: 18rem;">
           <h1>Engineer</h1>
           <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name:${webDevs[s].name}</li>
-            <li class="list-group-item">ID:${webDevs[s].id}</li>
-            <li class="list-group-item">Email:${webDevs[s].email}</li>
-            <li class="list-group-item">Github:${webDevs[s].github}</li>
+          <li class="list-group-item">Name: ${webDevs[s].name}</li>
+            <li class="list-group-item">ID: ${webDevs[s].id}</li>
+            <li class="list-group-item">Email: ${webDevs[s].email}</li>
+            <li class="list-group-item">Github: ${webDevs[s].github}</li>
           </ul>
         </div>`)
        break;
@@ -31,12 +31,12 @@ function newCards(webDevs){
        case "Intern":
           blankCard = blankCard.concat(  `
           <div class="card" style="width: 18rem;">
-          <h1>Engineer</h1>
+          <h1>Intern</h1>
           <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name:${webDevs[s].name}</li>
-            <li class="list-group-item">ID:${webDevs[s].id}</li>
-            <li class="list-group-item">Email:${webDevs[s].email}</li>
-            <li class="list-group-item">School:${webDevs[s].school}</li>
+          <li class="list-group-item">Name: ${webDevs[s].name}</li>
+            <li class="list-group-item">ID: ${webDevs[s].id}</li>
+            <li class="list-group-item">Email: ${webDevs[s].email}</li>
+            <li class="list-group-item">School: ${webDevs[s].school}</li>
           </ul>
         </div>`)
        break;
@@ -63,9 +63,14 @@ function generateHtml(webDevs){
 
     <div id="wrapper" class="container-fluid">
         <h1>Team of Web Dev's</h1>
+        <div class="row">
 
         ${newCards(webDevs)}
-     
+        </div>
+        
+        </div>
+
+    
 
     <script src="../generatehtml.js"></script>
 </body>
