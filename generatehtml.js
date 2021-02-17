@@ -5,11 +5,11 @@ function newCards(webDevs){
         case "Manager":
           blankCard = blankCard.concat(  `
           <div class="card card-custom" style="width: 18rem;">
-          <h2>Mangager</h2>
+          <h2>Mangager <i class="fas fa-mug-hot"></i></h2>
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email: ${webDevs[s].email}</li>
+            <li class="list-group-item">Email:<a href="mailto:${webDevs[s].email}">${webDevs[s].email}</a></li>
             <li class="list-group-item">Office Number:</li>
           </ul>
         </div>`)
@@ -18,11 +18,11 @@ function newCards(webDevs){
         case "Engineer":
           blankCard = blankCard.concat(  `
           <div class="card card-custom" style="width: 18rem;">
-          <h2>Engineer</h2>
+          <h2>Engineer<i class="fas fa-glasses"></i></h2>
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email:${webDevs[s].email}</li>
+            <li class="list-group-item">Email: <a href="mailto:${webDevs[s].email}">${webDevs[s].email}</a></li>
             <li class="list-group-item">Github:${webDevs[s].github}</li>
           </ul>
         </div>`)
@@ -31,11 +31,11 @@ function newCards(webDevs){
        case "Intern":
           blankCard = blankCard.concat(  `
           <div class="card card-custom" style="width: 18rem;">
-          <h2>Intern</h2>
+          <h2>Intern</h2><i class="fas fa-graduation-cap"></i>
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email: ${webDevs[s].email}</li>
+            <li class="list-group-item">Email: ${webDevs[s].email}</a></li>
             <li class="list-group-item">School: ${webDevs[s].school}</li>
           </ul>
         </div>`)
@@ -58,6 +58,7 @@ function generateHtml(webDevs){
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link href="./src/style.css" rel="stylesheet" type="text/css">
     <title>Team of Web Dev's</title>
 </head>
@@ -66,7 +67,7 @@ function generateHtml(webDevs){
     
               <h1>Team Of Web Devs</h1>
 
-      <div class=" flexbox-container">
+      <div class=" container">
         <div class="row">
       
 
