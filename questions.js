@@ -82,7 +82,7 @@ function managerInput() {
         {
             type: 'input',
             name: 'email',
-            message: 'What is their email address?',
+            message: 'What is your email address?',
             validate: function (email)
             {
                 return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
@@ -151,11 +151,11 @@ function engineerInput() {
         {
             type: 'input',
             name: 'email',
-            message: 'What is their email address?',
+            message: 'What is your email address?',
             validate: function (email)
             {
                 return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-            }
+            } // if the email address does not have 
         },
 
         {
@@ -216,8 +216,8 @@ function internInput() {
 
         {
             type: 'input',
-            name: 'email',
-            message: 'What is their email address?',
+            name: 'email', 
+            message: 'What is your email address?',
             validate: function (email)
             {
                 return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
