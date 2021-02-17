@@ -18,7 +18,7 @@ if((data.anotherEmployee).includes("No")) {
 function newHtmlFile(webDevs){
 
        let htmlFile = generateHtml(webDevs)
-       fs.writeFile("team.html", htmlFile, (err) =>
+       fs.writeFile("webdevs.html", htmlFile, (err) =>
        err ? console.log(err) : console.log("You're HTML file has been created") )
 
     }
