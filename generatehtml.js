@@ -5,7 +5,7 @@ function newCards(webDevs){
         case "Manager":
           blankCard = blankCard.concat(  `
           <div class="card card-custom" style="width: 18rem;">
-          <h2>Mangager <i class="fas fa-mug-hot"></i></h2>
+          <h2>Manager <i class="fas fa-mug-hot"></i></h2>
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
@@ -31,11 +31,11 @@ function newCards(webDevs){
        case "Intern":
           blankCard = blankCard.concat(  `
           <div class="card card-custom" style="width: 18rem;">
-          <h2>Intern</h2><i class="fas fa-graduation-cap"></i>
+          <h2>Intern<i class="fas fa-graduation-cap"></i><h2>
           <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${webDevs[s].name}</li>
             <li class="list-group-item">ID: ${webDevs[s].id}</li>
-            <li class="list-group-item">Email: ${webDevs[s].email}</a></li>
+            <li class="list-group-item">Email: <a href="mailto:${webDevs[s].email}">${webDevs[s].email}</a></li>
             <li class="list-group-item">School: ${webDevs[s].school}</li>
           </ul>
         </div>`)
